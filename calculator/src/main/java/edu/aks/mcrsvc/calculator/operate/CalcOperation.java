@@ -1,5 +1,7 @@
 package edu.aks.mcrsvc.calculator.operate;
 
+import edu.aks.mcrsvc.calculator.exception.CalculatorException;
+import edu.aks.mcrsvc.calculator.exception.ErrorMessages;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -42,14 +44,14 @@ public class CalcOperation {
         return product;
     }
 
-    public Double divide(List<Double> numberList) {
+    public Double divide(List<Double> numberList) throws CalculatorException {
         Double division = 0.0;
         if (null != numberList && !numberList.isEmpty()) {
             division = numberList.get(0);
             numberList.remove(0);
             for (Double no : numberList) {
                 if (no == 0.0) {
-                    return -0.0;
+                    throw new CalculatorException(ErrorMessages.NOT_DIV);
                 }
                 division = division / no;
             }
