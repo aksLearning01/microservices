@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("CalculatorService")
+@Service("CalculatorSvc")
 @Log4j
 public class CalculatorSvcImpl implements CalculatorSvc {
 

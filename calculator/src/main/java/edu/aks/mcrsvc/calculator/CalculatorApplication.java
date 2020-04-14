@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @Log4j
 public class CalculatorApplication {
-
     @Value("${spring.application.name}")
     private static String name;
 
@@ -16,5 +15,4 @@ public class CalculatorApplication {
         log.debug(name + " application started ");
         SpringApplication.run(CalculatorApplication.class, args);
     }
-
 }
